@@ -42,10 +42,14 @@
             Products
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Milk</a></li>
-            <li><a class="dropdown-item" href="#">Ice-cream</a></li>
-            <li><a class="dropdown-item" href="#">Water</a></li>
-            <li><a class="dropdown-item" href="#">Cheese</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'ML'%}">Milk</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'CR'%}">Curd</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'MS'%}">Milkshake</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'LS'%}">Lassi</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'GH'%}">Ghee</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'PN'%}">Paneer</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'CZ'%}">Cheese</a></li>
+            <li><a class="dropdown-item" href="{% url 'category' 'IC'%}">Ice-creams</a></li>
           </ul>
         </li>
         <li class="nav-item">
@@ -60,6 +64,7 @@
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
     </div>
+
     <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item dropdown mx-2">
           <a class="nav-link dropdown-toggle text-white" href="#" id="profileDropdown" data-bs-toggle="dropdown" aria-expanded="false">
@@ -80,18 +85,17 @@
         </li>
             <a class="nav-link text-white" href="#">Login</a>
         <li class="nav-item mx-2">
-            </li>
             <a class="nav-link text-white" href="#">Register</a>
-        <li class="nav-item mx-2">
-            
         </li>
     </ul>
 </div>
 </nav>
+{% block banner-slider %}{% endblock banner-slider %}
+{% block information %}{% endblock information %}
 {% block main-content %}{% endblock main-content %}
 
     <!-- Footer -->
-    <Footer>
+    <Footer class="container-fluid bg-success text-center p-2 mt-5"> 
         Copyright : 2024
     </Footer>
 
