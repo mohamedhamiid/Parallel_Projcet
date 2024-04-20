@@ -5,5 +5,6 @@ from . import views
 # Then include all in main URL
 # Hamid
 urlpatterns = [
-    path("", views.Home), # Home
+    path("", views.Home),
+    path("category/<slug:val>", views.CategoryView.as_view(),name="category"),
 ]
