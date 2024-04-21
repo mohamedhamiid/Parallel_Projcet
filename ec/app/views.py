@@ -22,7 +22,7 @@ class CategoryView(View):
 class CategoryTitle(View):
     def get(self, request,val):
         product = Product.objects.filter(title=val)
-        title = product.objects.filter(category=product[0].category).values('title')
+        title = Product.objects.filter(category=product[0].category).values('title')
         return render(request, "app/category.html",locals())
     
 class ProductDetail(View):

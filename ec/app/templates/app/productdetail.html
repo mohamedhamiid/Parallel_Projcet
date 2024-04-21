@@ -1,11 +1,11 @@
-{% extends 'app/base.html'}
+{% extends 'app/base.html'%}
 {% load static %}
 {% block title %}Category{% endblock title %}
 
 {% block main-content %}
 
 <div class="container">
-    <div class="row flex justify-content-between">
+    <div class="row flex justify-content-between" style="margin-top: 24px;">
         <div class="img2 col-lg-5 mt-5">
             <img src="{{product.product_image.url}}"
             class="image col-xs-6 col-sm-12 col-lg-12 mt-3 text-sm-center w-100 h-75" alt="">
@@ -14,7 +14,7 @@
             <h1 style="font-family: georgia; font-size: 50px;">
             {{product.title}}
             </h1>
-            <h5>EGP.{{product.disconected_price}}/-</h5>
+            <h5>EGP.{{product.discounted_price}}/-</h5>
             <small class="text-decoration-line-through text-muted fs-5">
                 <del>EGP. {{product.selling_price}}/-</del>
             </small>
@@ -25,8 +25,8 @@
                 {{product.description}}
             </li>
         </ul>
-        <div class="flex row buttons" style="font-family: Rajdhani"">
-        <button type="submit" class="d-grid gap-2 btn1 btn-danger p-1 m-1 btn-lg text-decoration-none text-white">
+        <div class="flex row buttons" style="font-family: Rajdhani">
+        <button type="submit" class="d-grid gap-2 btn1 btn-danger p-1 m-1 btn-lg text-decoration-none text-black">
             Add to Cart
         </button>
         <div class="btn btn-dark p-1 m-1 btn-lg">

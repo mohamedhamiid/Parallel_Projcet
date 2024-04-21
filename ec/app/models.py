@@ -14,10 +14,6 @@ CATEGORY_CHOICES={
      ('CZ','Cheese'),
      ('IC','Ice-Creams'),
 
-
-
-
-
 }
 
 
