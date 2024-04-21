@@ -1,21 +1,31 @@
-from django.shortcuts import render
-
-# Imported to use Http Response
-# Hamid
-from django.http import HttpResponse
-from django.shortcuts import render
+from django.db.models import Count
+from django.shortcuts import render 
 from django.views import View
+from . models import Product
 # Create your views here.
 
-# Here we define a function which will return the home page when calling it
-# It is called from main URL which is in url.py file
-# Hamid
-def Home(request):
-    return render(request,"app/home.html")
+def home(request):
+    return render(request, 'app/home.html')
 
+def about(request):
+    return render(request, 'app/about.html')
+
+def contact(request):
+    return render(request, 'app/contact.html')
 
 class CategoryView(View):
-    def get(self,request,val):
-        return render(request,"app/category.html",locals())
-
-
+    def get(self, request,val):
+        product = Product.objects.filter(category=val)
+        title = Product.objects.filter(category=val).values('title')
+        return render(request, "app/category.html",locals())
+    
+class CategoryTitle(View):
+    def get(self, request,val):
+        product = Product.objects.filter(title=val)
+        title = product.objects.filter(category=product[0].category).values('title')
+        return render(request, "app/category.html",locals())
+    
+class ProductDetail(View):
+    def get(self, request, pk):
+        product = Product.objects.get(pk=pk)
+        return render(request, 'app/productdetail.html', locals())
