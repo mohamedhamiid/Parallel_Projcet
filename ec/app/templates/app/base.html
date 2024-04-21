@@ -25,7 +25,7 @@
     <!-- bg->background -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
-    <a class="navbar-brand" href="/">
+    <a class="navbar-brand" href="#">
         <img src = "{% static "app/images/product/Neel.png" %}" width = "70" height = "50">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -83,9 +83,9 @@
             <a class="nav-link text-white" href="#">Whishlist</a>
         <li class="nav-item mx-2">
         </li>
-            <a class="nav-link text-white" href="#">Login</a>
+            <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
         <li class="nav-item mx-2">
-            <a class="nav-link text-white" href="#">Register</a>
+            <a class="nav-link text-white" href="{% url 'customerregistration'%}">Registration</a>
         </li>
     </ul>
 </div>
