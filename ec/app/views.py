@@ -15,7 +15,7 @@ def Home(request):
 
 
 class CategoryView(View):
-    def get(self,request):
+    def get(self,request,val):
         return render(request,"app/category.html",locals())
 
 
