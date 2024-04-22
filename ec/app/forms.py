@@ -22,3 +22,7 @@ class Meta:
 
 class MyPasswordResetForm(PasswordChangeForm):
     pass
+
+# kiro (2:35:45)
+class CustomerProfileForm(forms.ModelForm):
+    pass
