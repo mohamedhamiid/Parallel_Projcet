@@ -52,7 +52,7 @@ class CustomerRegistrationView(View):
 # Kiro 
 # add one class profile view 
 
-class ProfileView(view) :
+class ProfileView(View) :
     def get(self,request):
         return render(request , 'app/profile.html', locals())
     def post(self,request):
