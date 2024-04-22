@@ -1,4 +1,4 @@
-<!-- This is Base html file which contain the main items and styles of all other html files -->
+ <!-- This is Base html file which contain the main items and styles of all other html files -->
 <!DOCTYPE html>
 <!-- Define static folder which is in app to use it directly -->
 {% load static %}
@@ -71,7 +71,7 @@
             Hamid
           </a>
           <ul class="dropdown-menu" aria-labelledby="profileDropdown">
-            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
             <li><a class="dropdown-item" href="#">Orders</a></li>
             <li><a class="dropdown-item" href="#">Change Password</a></li>
             <li><a class="dropdown-item" href="#">Logout</a></li>

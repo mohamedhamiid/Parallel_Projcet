@@ -17,7 +17,9 @@ urlpatterns = [
     path("product-detail/<int:pk>", views.ProductDetail.as_view(),name="product-detail"),
     # kiro 
     path('profile/',views.ProfileView.as_view(),name='profile') ,
-    
+    #sarsourr
+    path('address/',views.ProfileView.as_view(),name='address') ,
+
     #Anas
     #Add login authentication
     path('registration/', views.CustomerRegistrationView.as_view(), name='customerregistration'), #path of registration
