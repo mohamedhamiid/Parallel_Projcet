@@ -48,5 +48,14 @@ class CustomerRegistrationView(View):
         else:
             messages.warning(request,"Invalid Input Data")
         return render(request,'app/customerregistration.html',locals())
+
+# Kiro 
+# add one class profile view 
+
+class ProfileView(view) :
+    def get(self,request):
+        pass
+    def post(self,request):
+        pass
     
                 
