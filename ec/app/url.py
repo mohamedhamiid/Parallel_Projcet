@@ -20,6 +20,14 @@ urlpatterns = [
     #sarsourr
     path('address/',views.ProfileView.as_view(),name='address') ,
 
+    #mariam
+    path('add-to-cart/', views.add_to_cart, name='add-to-cart'),
+    path('cart/', views.show_cart, name="showcart"),
+    path('checkout/', views.show_cart, name="checkout"),
+    path('pluscart/', views.plus_cart),
+    path('minuscart/', views.minus_cart),
+    path('removecart/', views.minus_cart),
+
     #Anas
     #Add login authentication
     path('registration/', views.CustomerRegistrationView.as_view(), name='customerregistration'), #path of registration
