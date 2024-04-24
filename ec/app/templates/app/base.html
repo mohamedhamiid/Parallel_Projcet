@@ -25,7 +25,7 @@
     <!-- bg->background -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-success">
     <div class="container-fluid">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
         <img src = "{% static "app/images/product/Neel.png" %}" width = "70" height = "50">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -74,7 +74,13 @@
             <li><a class="dropdown-item" href="{% url 'profile' %}">Profile</a></li>
             <li><a class="dropdown-item" href="#">Orders</a></li>
             <li><a class="dropdown-item" href="{% url 'passwordchange' %}">Change Password</a></li>
-            <li><a class="dropdown-item" href="{% url 'logout' %}">Logout</a></li>
+            <li>
+              <form id="logout-form" method="post" action="{% url 'logout' %}">
+                <a class="dropdown-item" href="{% url 'logout' %}">
+                {% csrf_token %}
+                <button type="submit" style="border: none;background-color: transparent;padding: 0;">Logout</button></a>
+              </form>
+            </li>
           </ul>
         </li>
             <a class="nav-link text-white" href="#">Cart</a>
