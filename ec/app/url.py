@@ -18,7 +18,8 @@ urlpatterns = [
     # kiro 
     path('profile/',views.ProfileView.as_view(),name='profile') ,
     #sarsourr
-    path('address/',views.ProfileView.as_view(),name='address') ,
+    path('address/',views.AddressView.as_view(),name='address') ,
+    path('updateAddress/<int:pk>',views.updateAddress.as_view(),name='updateAddress') ,
 
     #mariam
     path('add-to-cart/', views.add_to_cart, name='add-to-cart'),
