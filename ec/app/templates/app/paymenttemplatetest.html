@@ -1,0 +1,52 @@
+{% extends 'app/base.html' %}
+{% load static %}
+
+{% block main-content %}
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel = "stylesheet" href = "{% static 'app/css/payment.template.test.css' %}"/>
+
+</head>
+
+<div class="iframeOut">
+    <div class="iframBody">
+        <header>
+            <div class="iframeType">
+                <p>Credit Card</p>
+                <div class="cardsLogos">
+                    <img src="/static/img/visa.svg">
+                    <img src="/static/img/Mastercard.svg">
+                </div>
+            </div>
+        </header>
+        <form id="paymob_checkout">
+            <div class="inputDiv">
+                <input placeholder="Card Number" required maxlength="16" type="text" paymob_field="card_number">
+            </div>
+            <div class="inputDiv">
+                <input placeholder="Card Holder Name" required paymob_field="card_holdername">
+            </div>
+            <div class="inputDiv cardExpire">
+                <input placeholder="Exp. Month" required maxlength="2" type="text" paymob_field="card_expiry_mm">
+                <input placeholder="Exp. Year" required maxlength="2" type="text" paymob_field="card_expiry_yy">
+            </div>
+            <div class="inputDiv">
+                <input placeholder="CCV" type="text" required maxlength="4" paymob_field="card_cvn">
+            </div>
+            <input type="hidden" value="CARD" paymob_field="subtype">
+            <div class="inputDiv saveCard">
+                <input type="checkbox" value="tokenize" name="save card" id="save card">
+                <label for="save card">save card</label>
+            </div>
+            <input class="iframeBtn" type="submit" value="Pay">
+        </form>
+        <footer>
+            Powered by
+           <a href="#"><img src="/static/img/paymob_new.svg"></a>
+        </footer>
+    </div>
+</div>
+{% endblock main-content %}

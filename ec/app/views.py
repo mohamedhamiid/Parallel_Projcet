@@ -154,6 +154,24 @@ class checkout(View):
         #     )
         #     payment.save()
         return render(request, 'app/checkout.html',locals())
+def payment_done(request):
+    # order_id=request.GET.get('order_id')
+    # payment_id=request.GET.get('payment_id')
+    # cust_id=request.GET.get('cust_id')
+    # user=request.user
+    # customer=Customer.objects.get(id=cust_id)
+    # payment=Payment.objects.get(razorpay_order=order_id)
+    # payment.paid=True
+    # payment.razorpay_payment_id=payment_id
+    # payment.save()
+    # cart=Cart.objects.filter(user=user)
+    # for c in cart:
+    #     OrderPlaced(user=user,customer=customer, product=c.product,quantity=c.quantity,payment=payment).save()
+    #     c.delete()
+    return render(request, 'app/paymenttemplatetest.html',locals())    
+    
+    
+    
     
 def plus_cart(request):
     if request.method == 'GET':
