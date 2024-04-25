@@ -1,11 +1,15 @@
+from audioop import reverse
 from django.db.models import Count, Q
 from django.shortcuts import redirect, render 
 from django.views import View
 # import razorpay
 from .models import Cart, Product,Customer,Payment,OrderPlaced
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponseRedirect
 from django.contrib import messages
 from django.conf import settings
+from .models import Product
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 #Anas
 #sara
 from .forms import CustomerProfileForm, CustomerRegistrationForm
@@ -127,7 +131,6 @@ def show_cart(request):
     totalamount = amount + 20
     return render(request, 'app/addtocart.html', locals())
 class checkout(View):
-    
     def get(self,request):
         user=request.user
         add=Customer.objects.filter(user=user)
@@ -154,6 +157,30 @@ class checkout(View):
         #     )
         #     payment.save()
         return render(request, 'app/checkout.html',locals())
+    
+def test(request):
+    user = request.user
+    add = Customer.objects.filter(user=user)
+    cart_items = Cart.objects.filter(user=user)
+    error_message = None
+    
+    # Handle if quantity isn't valid
+    for cart_item in cart_items:
+        product = cart_item.product  # Access the product associated with the cart item
+        if product.Quantity >= cart_item.quantity:
+            product.Quantity -= cart_item.quantity
+            product.save()
+        else:
+            # Quantity is insufficient, set error_message
+            error_message = f"The available quantity for {product.title} is only {product.Quantity}. Please remove it from your cart or reduce the quantity."
+            break
+    
+    if error_message:
+        return JsonResponse({'message': error_message}, status=400)
+    # else:
+    #     success_url = reverse('app/home.html')
+    #     return JsonResponse({'redirect_url': 'app/home.html'})
+
 def payment_done(request):
     # order_id=request.GET.get('order_id')
     # payment_id=request.GET.get('payment_id')

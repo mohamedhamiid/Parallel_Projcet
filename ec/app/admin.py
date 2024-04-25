@@ -5,7 +5,7 @@ from .models import Product, Customer, Cart, Payment,OrderPlaced
 
 @admin.register(Product)
 class ProductModelAdmin(admin.ModelAdmin):
-     list_display=['id','title','discounted_price','category','product_image']
+     list_display=['id','title','discounted_price','category','product_image','Quantity']
 
 @admin.register(Customer)
 class CustomerModelAdmin(admin.ModelAdmin): 

@@ -1,6 +1,8 @@
 {% extends 'app/base.html' %}
 {% load static %}
-
+{% block title %}
+  Payment
+{% endblock %}
 {% block main-content %}
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -12,16 +14,14 @@
 </head>
 
 <div class="iframeOut">
-    <div class="iframBody">
-        <header>
+    <div class="iframBody shadow">
             <div class="iframeType">
                 <p>Credit Card</p>
                 <div class="cardsLogos">
-                    <img src="/static/img/visa.svg">
-                    <img src="/static/img/Mastercard.svg">
+                    <img src={% static "app/images/logos/visa.svg" %}>
+                    <img src={% static "app/images/logos/paypal.svg" %}>
                 </div>
             </div>
-        </header>
         <form id="paymob_checkout">
             <div class="inputDiv">
                 <input placeholder="Card Number" required maxlength="16" type="text" paymob_field="card_number">
@@ -41,12 +41,33 @@
                 <input type="checkbox" value="tokenize" name="save card" id="save card">
                 <label for="save card">save card</label>
             </div>
-            <input class="iframeBtn" type="submit" value="Pay">
+        <!-- order.html -->
+<div id="error-message" style="display: none;"></div>
+
+<a id="pay-button" class="btn btn-warning mt-3 px-5 fw-bold" href="{% url 'test' %}">Pay</a>
+
+{% comment %} To handle insufficient amounts  {% endcomment %}
+<script>
+document.getElementById('pay-button').addEventListener('click', function(event) {
+    event.preventDefault();
+    var xhr = new XMLHttpRequest();
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === XMLHttpRequest.DONE) {
+            if (xhr.status === 200) {
+                window.location.href = xhr.responseText;
+            } else {
+                var errorMessage = JSON.parse(xhr.responseText).message;
+                document.getElementById('error-message').innerText = errorMessage;
+                document.getElementById('error-message').style.display = 'block';
+            }
+        }
+    };
+    xhr.open('GET', "{% url 'test' %}", true);
+    xhr.send();
+});
+</script>
+
         </form>
-        <footer>
-            Powered by
-           <a href="#"><img src="/static/img/paymob_new.svg"></a>
-        </footer>
     </div>
 </div>
 {% endblock main-content %}

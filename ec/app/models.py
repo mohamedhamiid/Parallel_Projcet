@@ -43,6 +43,7 @@ class Product(models.Model):
      prodapp=models.TextField(default='')
      category=models.CharField(choices=CATEGORY_CHOICES,max_length=2)
      product_image=models.ImageField(upload_to='product')
+     Quantity = models.IntegerField(default=1)
 
      def __str__(self):
           return self.title

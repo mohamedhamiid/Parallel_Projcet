@@ -24,7 +24,13 @@
             <li>
                 {{product.description}}
             </li>
-        </ul>
+            </ul>
+            <h4>Available Quantity</h4>
+            <ul class="fs-5" style="font-family: Rajdhani">
+            <li>
+                {{product.Quantity}}
+            </li>
+            </ul>
         <form action="/add-to-cart" class="d-inline">
             <input type="hidden" name="prod_id" value="{{product.id}}"/>
             <button type="submit" class="btn btn-primary shadow px-5 py-2">
