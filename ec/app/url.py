@@ -10,7 +10,7 @@ from .forms import LoginForm,MyPasswordResetForm,PasswordChangeForm,MySetPasswor
 # Hamid
 urlpatterns = [
     path("", views.home),
-    path("about/", views.about,name="about"),
+    # path("about/", views.about,name="about"),
     path("contact/", views.contact,name="contact"),
     path("category/<slug:val>", views.CategoryView.as_view(),name="category"),
     path("category-title/<val>", views.CategoryTitle.as_view(),name="category-title"),
@@ -35,8 +35,8 @@ urlpatterns = [
     path('search/', views.search, name="search"),
 
 
-    path('pluswishlist/', views.plus_wishlist),
-    path('minuswishlist/', views.minus_wishlist),
+    # path('pluswishlist/', views.plus_wishlist),
+    # path('minuswishlist/', views.minus_wishlist),
 
 
     #Anas

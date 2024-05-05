@@ -23,10 +23,10 @@
     <!-- Navbar from bootstrap -->
 
     <!-- bg->background -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
       <div class="container-fluid">
         <a class="navbar-brand" href="/"> 
-            <img src = "{% static "app/images/product/Neel.png" %}" width = "70" height = "50">
+            <img src = "{% static "app/images/product/BuyZone.png" %}" width = "70" height = "40" >
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -42,25 +42,28 @@
                 Products
               </a>
               <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="{% url 'category' 'ML' %}">Milk</a></li>
-                <li><a class="dropdown-item" href="{% url 'category' 'CR' %}">Curd</a></li>
-                <li><a class="dropdown-item" href="{% url 'category' 'MS' %}">Milkshake</a></li>
-                <li><a class="dropdown-item" href="{% url 'category' 'LS' %}">Lassi</a></li>
-                <li><a class="dropdown-item" href="{% url 'category' 'GH' %}">Ghee</a></li>
-                <li><a class="dropdown-item" href="{% url 'category' 'PN' %}">Paneer</a></li>
-                <li><a class="dropdown-item" href="{% url 'category' 'CZ' %}">Cheese</a></li>
-                <li><a class="dropdown-item" href="{% url 'category' 'IC' %}">Ice-creams</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'RP' %}">Rice & pasta</a></li> 
+                <li><a class="dropdown-item" href="{% url 'category' 'MP' %}">Meat & Poultry</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'CDS' %}">Chips, Dips & Snacks</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'PC' %}">Personal Care</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'FV' %}">Fruits & vegetables</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'D' %}">Dairy</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'BP' %}">Bakery & Pastry</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'LD' %}">Laundry and Detergents</a></li>
+              
               </ul>
             </li>
-            <li class="nav-item">
+            {% comment %} <li class="nav-item">
               <a class="nav-link" href="{% url 'about' %}">About us</a></li>
             <li class="nav-item">
-              <a class="nav-link" href="{% url 'contact' %}">Contact us</a></li>
+              <a class="nav-link" href="{% url 'contact' %}">Contact us</a></li> {% endcomment %}
                 
           </ul>
-          <form class="d-flex" role="search" action="/search">
+          <form class="d-flex" role="search" action="/search" style="margin-right :700px  " >
             <input class="form-control me-2" type="search" placeholder="Search" name = "search" aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit">Search</button>
+            <button class="btn btn-outline-dark" type="submit">
+              <img src = "{% static "app/images/product/magnifying-glass-solid.svg" %}" width = "50" height = "25" >
+            </button>
           </form>
         </div>
 
@@ -105,9 +108,9 @@
             
             </li>
 
-            <li class="nav-item mx-2">
+            {% comment %} <li class="nav-item mx-2">
               <a href="#" class="nav-link text-white"> <span class="badge bg-danger"> {% if wishitem > 0 %} {{wishitem}} {% endif %}</span> Wishlist</a>
-            </li>
+            </li> {% endcomment %}
             {% else %}    
             <li class="nav-item mx-2">
                 <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
@@ -124,9 +127,29 @@
 {% block main-content %}{% endblock main-content %}
 {% block payment-gateway %}{% endblock payment-gateway %}
 
+  
+
     <!-- Footer -->
-    <Footer class="container-fluid bg-success text-center p-2 mt-5" style="position: absolute; bottom: -80px;"> 
-        Copyright : 2024
+    <Footer class="container-fluid bg-secondary text- p-2 mt-5" style="position: absolute; bottom: -80px ; diplay :flex; justify-content: space-between;" > 
+      <a href="https://www.facebook.com/?locale=ar_AR"  target="_blank" >
+        <img src = "{% static "app/images/product/facebook.svg" %}"  width = "40" height = "30" >
+      </a> 
+      <a href="https://api.whatsapp.com/send?phone=201096396432" target="_blank" >
+        <img src = "{% static "app/images/product/whatsapp.svg" %}"  width = "40" height = "30">
+      </a> 
+      <a href="#" target="_blank" >
+        <img src = "{% static "app/images/product/instagram.svg" %}"  width = "40" height = "30">
+      </a >  
+      <a href="#" target="_blank" >
+        <img src = "{% static "app/images/product/envelope-solid.svg" %}" width = "40" height = "30">
+      </a> 
+      
+      
+      
+      
+
+      <img src = "{% static "app/images/product/BuyZone.png" %}" width = "40" height = "30" >
+    
     </Footer>
 
     <!-- Java Script files -->

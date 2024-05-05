@@ -201,61 +201,48 @@ class checkout(View):
             value=p.quantity*p.product.discounted_price
             famount=famount+value
         totalamount= famount+40
-        # razoramount=int(totalamount*100)#mult in 100 for rupess????????
-        # client=razorpay.Client(auth=(settings.RAZOR_KEY_ID,settings.RAZOR_KEY_SECRET))
-        # data={"amount":razoramount,"currency":"INR","receipt":"order_rcptid_11"}
-        # payment_response=client.order.create(data=data)
-        # print(payment_response)
-        # # print output as a comment
-        # order_id=payment_response['id']
-        # order_status=payment_response['status']
-        # if order_status =='created':
-        #     payment=Payment(
-        #         user=user,
-        #         amount=totalamount,
-        #         razorpay_order_id=order_id,
-        #         razorpay_payment_status=order_status
-        #     )
-        #     payment.save()
         return render(request, 'app/checkout.html',locals())
     
 def test(request):
     user = request.user
-    add = Customer.objects.filter(user=user)
+    customer = Customer.objects.filter(user=user).first()
     cart_items = Cart.objects.filter(user=user)
     error_message = None
+    all_available = True  # Flag to track if all quantities are available
     
-    # Handle if quantity isn't valid
+    # Check if all quantities are available
     for cart_item in cart_items:
-        product = cart_item.product  # Access the product associated with the cart item
-        if product.Quantity >= cart_item.quantity:
-            product.Quantity -= cart_item.quantity
-            product.save()
-        else:
-            # Quantity is insufficient, set error_message
-            error_message = f"The available quantity for {product.title} is only {product.Quantity}. Please remove it from your cart or reduce the quantity."
+        product = cart_item.product
+        if product.Quantity < cart_item.quantity:
+            all_available = False
+            message = f"The available quantity for {product.title} is only {product.Quantity}. Please remove it from your cart or reduce the quantity."
             break
     
-    if error_message:
-        return JsonResponse({'message': error_message}, status=400)
-    # else:
-    #     success_url = reverse('app/home.html')
-    #     return JsonResponse({'redirect_url': 'app/home.html'})
+    # If all quantities are available, deduct from the database
+    if all_available:
+        for cart_item in cart_items:
+            product = cart_item.product
+            product.Quantity -= cart_item.quantity
+            product.save()
+
+            message = f"Payment successful."
+            
+        # custid=request.GET.get('custid')
+        customer=Customer.objects.get(id=customer.id)
+        for c in cart_items:
+            OrderPlaced(user=user,customer=customer, product=c.product,quantity=c.quantity).save()
+            # c.delete()
+        cart_items.delete()
+        # Display success message
+        return JsonResponse({'message': message}, status=200)
+    else:
+        # Display error message
+
+        return JsonResponse({'message': message}, status=400)
+
 
 def payment_done(request):
-    # order_id=request.GET.get('order_id')
-    # payment_id=request.GET.get('payment_id')
-    # cust_id=request.GET.get('cust_id')
-    # user=request.user
-    # customer=Customer.objects.get(id=cust_id)
-    # payment=Payment.objects.get(razorpay_order=order_id)
-    # payment.paid=True
-    # payment.razorpay_payment_id=payment_id
-    # payment.save()
-    # cart=Cart.objects.filter(user=user)
-    # for c in cart:
-    #     OrderPlaced(user=user,customer=customer, product=c.product,quantity=c.quantity,payment=payment).save()
-    #     c.delete()
+  
     return render(request, 'app/paymenttemplatetest.html',locals())    
     
 

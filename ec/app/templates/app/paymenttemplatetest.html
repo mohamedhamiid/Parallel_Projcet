@@ -54,7 +54,7 @@ document.getElementById('pay-button').addEventListener('click', function(event) 
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {
             if (xhr.status === 200) {
-                window.location.href = xhr.responseText;
+                window.location.href = "{% url 'orders' %}";
             } else {
                 var errorMessage = JSON.parse(xhr.responseText).message;
                 document.getElementById('error-message').innerText = errorMessage;
