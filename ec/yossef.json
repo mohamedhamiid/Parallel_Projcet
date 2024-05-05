@@ -25,7 +25,7 @@
             "composition": 0,
             "prodapp": 0,
             "category": "CDS",
-            "product_image": "productlion_chips.png",
+            "product_image": "product/lion_chips.png",
             "Quantity": 1
         }
     },
@@ -40,7 +40,7 @@
             "composition": 0,
             "prodapp": 0,
             "category": "RP",
-            "product_image": "productElsa3a.png",
+            "product_image": "product/Elsa3a.png",
             "Quantity": 10
         }
     },
@@ -55,7 +55,7 @@
             "composition": 0,
             "prodapp": 0,
             "category": "RP",
-            "product_image": "productItaliano.png",
+            "product_image": "product/Italiano.png",
             "Quantity": 10
         }
     },
@@ -70,7 +70,7 @@
             "composition": 0,
             "prodapp": 0,
             "category": "RP",
-            "product_image": "productRegina.png",
+            "product_image": "product/Regina.png",
             "Quantity": 10
         }
     },
@@ -85,7 +85,7 @@
             "composition": 0,
             "prodapp": 0,
             "category": "RP",
-            "product_image": "productElDo7a.png",
+            "product_image": "product/ElDo7a.png",
             "Quantity": 10
         }
     },
@@ -100,7 +100,7 @@
             "composition": 0,
             "prodapp": 0,
             "category": "RP",
-            "product_image": "productSofra.png",
+            "product_image": "product/Sofra.png",
             "Quantity": 10
         }
     },
