@@ -12,16 +12,17 @@ STATE_CHOICES= (
 )
 
 
+
 CATEGORY_CHOICES=(
      
-     ('CR','Curd'),
-     ('ML','Milk'),
-     ('LS','Lassi'),
-     ('MS','Milkshake'),
-     ('PN','Paneer'),
-     ('GH','Ghee'),
-     ('CZ','Cheese'),
-     ('IC','Ice-Creams'),
+     ('RP','Rice & pasta'),
+     ('MP','Meat & Poultry'),
+     ('CDS','Chips, Dips & Snacks'),
+     ('PC','Personal Care'),
+     ('FV','Fruits & vegetables'),
+     ('D','Dairy'),
+     ('BP','Bakery & Pastry'),
+     ('LD','Laundry & Detergents'),
 
 )
 STATUS_CHOICES= (
@@ -41,7 +42,7 @@ class Product(models.Model):
      description=models.TextField()
      composition=models.TextField(default='')
      prodapp=models.TextField(default='')
-     category=models.CharField(choices=CATEGORY_CHOICES,max_length=2)
+     category=models.CharField(choices=CATEGORY_CHOICES,max_length=3)
      product_image=models.ImageField(upload_to='product')
      Quantity = models.IntegerField(default=1)
 

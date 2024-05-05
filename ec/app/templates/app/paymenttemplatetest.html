@@ -50,6 +50,13 @@
 <script>
 document.getElementById('pay-button').addEventListener('click', function(event) {
     event.preventDefault();
+    var form = document.getElementById('paymob_checkout');
+    if (!form.checkValidity()){
+        // Display error message or handle validation feedback
+        // For example, show an alert:
+        alert('Please fill in all required fields.');
+        return; // Exit function if form is not valid
+        }
     var xhr = new XMLHttpRequest();
     xhr.onreadystatechange = function() {
         if (xhr.readyState === XMLHttpRequest.DONE) {

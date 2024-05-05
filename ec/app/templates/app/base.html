@@ -23,10 +23,10 @@
     <!-- Navbar from bootstrap -->
 
     <!-- bg->background -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-secondary">
+    <nav class="navbar navbar-expand-lg navbar-dark " style ="background-color : #561c24;">
       <div class="container-fluid">
         <a class="navbar-brand" href="/"> 
-            <img src = "{% static "app/images/product/BuyZone.png" %}" width = "70" height = "40" >
+            <img src = "{% static "app/images/product/BuyZoneLast.png" %}" width = "100" height = "40" >
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
@@ -49,7 +49,7 @@
                 <li><a class="dropdown-item" href="{% url 'category' 'FV' %}">Fruits & vegetables</a></li>
                 <li><a class="dropdown-item" href="{% url 'category' 'D' %}">Dairy</a></li>
                 <li><a class="dropdown-item" href="{% url 'category' 'BP' %}">Bakery & Pastry</a></li>
-                <li><a class="dropdown-item" href="{% url 'category' 'LD' %}">Laundry and Detergents</a></li>
+                <li><a class="dropdown-item" href="{% url 'category' 'LD' %}">Laundry & Detergents</a></li>
               
               </ul>
             </li>
@@ -61,7 +61,7 @@
           </ul>
           <form class="d-flex" role="search" action="/search" style="margin-right :700px  " >
             <input class="form-control me-2" type="search" placeholder="Search" name = "search" aria-label="Search">
-            <button class="btn btn-outline-dark" type="submit">
+            <button class="btn btn-outline-light" type="submit" style ="--bs-btn-hover-bg: #7d1624;">
               <img src = "{% static "app/images/product/magnifying-glass-solid.svg" %}" width = "50" height = "25" >
             </button>
           </form>
@@ -130,25 +130,25 @@
   
 
     <!-- Footer -->
-    <Footer class="container-fluid bg-secondary text- p-2 mt-5" style="position: absolute; bottom: -80px ; diplay :flex; justify-content: space-between;" > 
+    <Footer class="container-fluid  text- p-2 mt-5" style="position: absolute; bottom: -80px ; diplay :flex; justify-content: space-between; background-color : #561c24;" > 
       <a href="https://www.facebook.com/?locale=ar_AR"  target="_blank" >
-        <img src = "{% static "app/images/product/facebook.svg" %}"  width = "40" height = "30" >
+        <img src = "{% static "app/images/product/facebook.svg" %}"  width = "40" height = "30"    style= "opacity: 0.8;" >
       </a> 
       <a href="https://api.whatsapp.com/send?phone=201096396432" target="_blank" >
-        <img src = "{% static "app/images/product/whatsapp.svg" %}"  width = "40" height = "30">
+        <img src = "{% static "app/images/product/whatsapp.svg" %}"  width = "40" height = "30" style= "opacity: 0.9;">
       </a> 
       <a href="#" target="_blank" >
-        <img src = "{% static "app/images/product/instagram.svg" %}"  width = "40" height = "30">
+        <img src = "{% static "app/images/product/instagram.svg" %}"  width = "40" height = "30" style= "opacity: 0.9;">
       </a >  
       <a href="#" target="_blank" >
-        <img src = "{% static "app/images/product/envelope-solid.svg" %}" width = "40" height = "30">
+        <img src = "{% static "app/images/product/envelope-regular.svg" %}" width = "40" height = "30" style= "opacity: 0.8;">
       </a> 
       
       
       
       
 
-      <img src = "{% static "app/images/product/BuyZone.png" %}" width = "40" height = "30" >
+      <img src = "{% static "app/images/product/BuyZoneLast.png" %}" width = "100" height = "30" >
     
     </Footer>
 
