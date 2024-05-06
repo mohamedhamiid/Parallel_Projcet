@@ -54,7 +54,6 @@ class CategoryTitle(View):
 class ProductDetail(View):
     def get(self, request, pk):
         product = Product.objects.get(pk=pk)
-        wishlist = Wishlist.objects.filter(Q(product=product) & Q(user=request.user))
         totalitem = 0
         if request.user.is_authenticated:
             totalitem = len(Cart.objects.filter(user=request.user))
