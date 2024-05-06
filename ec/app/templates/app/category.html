@@ -20,8 +20,10 @@
             <div class="col text-center mb-4" style="margin-top: 24px;">
                 <a href="{% url 'product-detail' prod.id %}" class="btn">
                     <div>
-                        <img src="{{prod.product_image.url}}" width="200px" height="200px" />
-                        <div class="fw-bold">{{prod.title}}</div>
+                        <div style="width: 200px; text-align: center; margin-bottom: 20px;">
+                            <img src="{{prod.product_image.url}}" alt="{{prod.title}}" style="width: 100%; height: auto; max-width: 100%;">
+                            <div class="fw-bold">{{prod.title}}</div>
+                        </div>
                         <div class="fw-bold text-danger">
                             EGP.{{prod.discounted_price}}/-
                             <small class="fw-light text-decoration-line-through">
