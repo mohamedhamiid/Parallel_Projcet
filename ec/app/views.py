@@ -143,6 +143,8 @@ class updateAddress(View):
         
 def add_to_cart(request):
     user=request.user
+    if (request.user.is_anonymous):
+        return redirect("/accounts/login/")
     product_id=request.GET.get('prod_id')
     product = Product.objects.get(id=product_id)
     try:
@@ -153,6 +155,8 @@ def add_to_cart(request):
     
 def show_cart(request):
     user = request.user
+    if (request.user.is_anonymous):
+        return redirect("/accounts/login/")      
     cart = Cart.objects.filter(user=user)
     amount = 0
     for p in cart:
