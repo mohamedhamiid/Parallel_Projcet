@@ -9,6 +9,7 @@
 
     <!-- Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <!-- CSS -->
     <link rel = "stylesheet" href = "{% static 'app/css/owl.carousel.min.css' %}"/>
     <link rel = "stylesheet" href = "{% static 'app/css/style.css' %}"/>
@@ -16,7 +17,7 @@
 
     <!-- Each page will has its title -->
     <!-- So we will assign a title if one is missing -->
-    <title>Diary Products {% block title %}{% endblock title %}</title>
+    <title>BuyZone {% block title %}{% endblock title %}</title>
 </head>
 <body style="min-height:89vh;position: relative;">
     <!-- Navbar from bootstrap -->
@@ -52,7 +53,8 @@
               
               </ul>
             </li>
-              {% comment %}
+            {% comment %} <li class="nav-item">
+              <a class="nav-link" href="{% url 'about' %}">About us</a></li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'contact' %}">Contact us</a></li> {% endcomment %}
                 
@@ -129,10 +131,10 @@
 
     <!-- Footer -->
     <Footer class="container-fluid  text- p-2 mt-5" style="position: absolute; bottom: -80px ; diplay :flex; justify-content: space-between; background-color : #561c24;" > 
-      <a href="https://www.facebook.com/profile.php?id=61559260412941&is_tour_dismissed"  target="_blank" >
+      <a href="https://www.facebook.com/people/BuyZone/61559260412941/?is_tour_dismissed"  target="_blank" >
         <img src = "{% static "app/images/product/facebook.svg" %}"  width = "40" height = "30"    style= "opacity: 0.8;" >
       </a> 
-      <a href="https://api.whatsapp.com/send?phone=201096396432" target="_blank" >
+      <a href="https://chat.whatsapp.com/IlkDXPRBht4LQgg2ZSD2h3" target="_blank" >
         <img src = "{% static "app/images/product/whatsapp.svg" %}"  width = "40" height = "30" style= "opacity: 0.9;">
       </a> 
       <a href="#" target="_blank" >
@@ -141,6 +143,10 @@
       <a href="#" target="_blank" >
         <img src = "{% static "app/images/product/envelope-regular.svg" %}" width = "40" height = "30" style= "opacity: 0.8;">
       </a> 
+      
+      
+      
+      
 
       <img src = "{% static "app/images/product/BuyZoneLast.png" %}" width = "100" height = "30" >
     

@@ -6176,6 +6176,7 @@ a {
 }
 
 .goodnesseccont p {
+    margin-top: 5px;
     transition: color 0.3s ease, font-size 0.3 ease;
     -webkit-transition: color 0.3s ease, font-size 0.3 ease;
     -moz-transition: color 0.3s ease, font-size 0.3 ease;
