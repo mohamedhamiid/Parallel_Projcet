@@ -25,7 +25,7 @@
             "composition": 0,
             "prodapp": 0,
             "category": "CDS",
-            "product_image": "product/lion chips.png",
+            "product_image": "product/lion_chips.png",
             "Quantity": 1
         }
     },
@@ -34,8 +34,8 @@
         "pk": 3,
         "fields": {
             "title": "El-Sa3a Rice 1kg",
-            "selling_price": 30.0,
-            "discounted_price": 38.0,
+            "selling_price": 38.0,
+            "discounted_price": 30.0,
             "description": "White rice 1 kg",
             "composition": 0,
             "prodapp": 0,
@@ -49,8 +49,8 @@
         "pk": 4,
         "fields": {
             "title": "Italiano Rice 1kg",
-            "selling_price": 35.0,
-            "discounted_price": 40.0,
+            "selling_price": 40.0,
+            "discounted_price": 35.0,
             "description": "White Rice 1 Kg",
             "composition": 0,
             "prodapp": 0,
@@ -64,8 +64,8 @@
         "pk": 5,
         "fields": {
             "title": "Regina Rice 1kg",
-            "selling_price": 35.0,
-            "discounted_price": 39.0,
+            "selling_price": 39.0,
+            "discounted_price": 35.0,
             "description": "White Rice 1 kg",
             "composition": 0,
             "prodapp": 0,
@@ -79,8 +79,8 @@
         "pk": 6,
         "fields": {
             "title": "El-Doha Rice 1kg",
-            "selling_price": 30.0,
-            "discounted_price": 35.0,
+            "selling_price": 35.0,
+            "discounted_price": 30.0,
             "description": "White Rice 1 KG",
             "composition": 0,
             "prodapp": 0,
@@ -94,8 +94,8 @@
         "pk": 7,
         "fields": {
             "title": "Sofra Rice 1kg",
-            "selling_price": 28.0,
-            "discounted_price": 30.0,
+            "selling_price": 30.0,
+            "discounted_price": 28.0,
             "description": "White Rice 1 KG",
             "composition": 0,
             "prodapp": 0,
@@ -115,7 +115,7 @@
             "composition": "0",
             "prodapp": "0",
             "category": "CDS",
-            "product_image": "product/tiger chips.png",
+            "product_image": "product/tiger_chips.png",
             "Quantity": 1
         }
     },
