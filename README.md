@@ -13,8 +13,8 @@ Welcome to the Online Hypermarket Website repository! This website allows users 
 ## Technologies Used
 
 - **Frontend:**
-  - HTML5
-  - CSS3
+  - HTML
+  - CSS
   - JavaScript
 
 - **Backend:**
