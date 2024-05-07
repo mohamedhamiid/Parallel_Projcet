@@ -1,4 +1,4 @@
- Online Hypermarket Website
+ # Online Hypermarket Website
 
 Welcome to the Online Hypermarket Website repository! This website allows users to browse products, add items to their cart, and make purchases online. It also provides a search functionality to find products easily.
 
