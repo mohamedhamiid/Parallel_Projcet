@@ -19,3 +19,7 @@ Welcome to the Online Hypermarket Website repository! This website allows users 
 
 - **Backend:**
   - Django
+## To setup the environment for the first time on windows:
+Double click on the `setup.bat` file to run it.
+## To run the project:
+Double click on the `run.bat` file to run it.
